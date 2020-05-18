@@ -2,6 +2,8 @@ import time
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.dialects.postgresql import UUID
+from uuid import uuid4
 import random
 
 app = Flask(__name__)
@@ -38,6 +40,13 @@ class CharacterCardDeck(db.Model):
     def __init__(self, card):
         self.card = card
 
+class GameSession(db.Model):
+    __tablename__ = 'GameSession'
+    id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
+    code = db.Column(db.String(8), unique=True, default=str(uuid4)[:8])
+
+    def __init__(self, code, players):
+        self.code = code
 
 @app.route('/addActionCard', methods=['POST'])
 def addActionCard():
