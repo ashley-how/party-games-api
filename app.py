@@ -9,7 +9,7 @@ import random
 app = Flask(__name__)
 CORS(app)
 
-ENV = 'dev'
+ENV = ''
 
 if ENV == 'dev':
     app.debug = True
