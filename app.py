@@ -8,20 +8,10 @@ import random
 
 app = Flask(__name__)
 CORS(app)
-
-ENV = ''
-
-if ENV == 'dev':
-    app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/partyGameDb'
-else:
-    app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ywwrreehkrldkm:26f8fc64055af96448159aa161df42fbd4d762b0b0545e24e8f42713b21274bf@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/d2eqo77v5v3rri'
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ywwrreehkrldkm:26f8fc64055af96448159aa161df42fbd4d762b0b0545e24e8f42713b21274bf@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/d2eqo77v5v3rri'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-
 
 class ActionCardDeck(db.Model):
     __tablename__ = 'ActionCardDeck'
