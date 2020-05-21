@@ -13,6 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+
 class ActionCardDeck(db.Model):
     __tablename__ = 'ActionCardDeck'
     id = db.Column(db.Integer, primary_key=True)
@@ -30,6 +31,7 @@ class CharacterCardDeck(db.Model):
     def __init__(self, card):
         self.card = card
 
+
 class GameSession(db.Model):
     __tablename__ = 'GameSession'
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
@@ -37,6 +39,7 @@ class GameSession(db.Model):
 
     def __init__(self, code, players):
         self.code = code
+
 
 @app.route('/addActionCard', methods=['POST'])
 def addActionCard():
@@ -66,6 +69,21 @@ def getActionCard():
     selectedCard = ActionCardDeck.query.get(randomNum)
     return {"result": selectedCard.card}
 
+@app.route('/getAllCharacterCard')
+def getAllCharacterCard():
+    cards = CharacterCardDeck.query.all()
+    results = [
+        {"result": card.card} for card in cards
+    ]
+    return {'card': results}
+
+
+@app.route('/getCharacterCard')
+def getCharacterCard():
+    cardCount = db.session.query(CharacterCardDeck).count()
+    randomNum = random.randint(1, cardCount)
+    selectedCard = CharacterCardDeck.query.get(randomNum)
+    return {"result": selectedCard.card}
 
 @app.route('/')
 def index():
