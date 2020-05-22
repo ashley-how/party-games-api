@@ -8,7 +8,7 @@ import random
 
 app = Flask(__name__)
 CORS(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ywwrreehkrldkm:26f8fc64055af96448159aa161df42fbd4d762b0b0545e24e8f42713b21274bf@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/d2eqo77v5v3rri'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://adpfowzkleeitp:96ccb53cb09065e05c77ee8ef0e64bc26c8fd3d9b7eb4f0fb9fdd9427431a1cb@ec2-46-137-100-204.eu-west-1.compute.amazonaws.com:5432/d2gcilbhceanps'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
