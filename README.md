@@ -3,6 +3,8 @@
 Install yarn package manager at:
 https://classic.yarnpkg.com/en/docs/install/#windows-stable
 
+Install all flask packages as shown in requirements.txt file.
+
 In the project api directory, you can run:
 
 ### `yarn start-api`
