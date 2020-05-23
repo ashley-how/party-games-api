@@ -2,7 +2,7 @@
 
 In the project api directory, you can run:
 
-### `yarm start-api`
+### `yarn start-api`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
