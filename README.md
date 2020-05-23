@@ -1,6 +1,7 @@
 # Party Games Api
 
-Install yarn package manager.
+Install yarn package manager at:
+https://classic.yarnpkg.com/en/docs/install/#windows-stable
 
 In the project api directory, you can run:
 
