@@ -1,5 +1,7 @@
 # Party Games Api
 
+Install yarn package manager.
+
 In the project api directory, you can run:
 
 ### `yarn start-api`
