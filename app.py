@@ -94,7 +94,7 @@ def getGameModes():
     return {'result': modes}
 
 
-@app.route('/getAllActionCard')
+@app.route('/getAllActionCards')
 def getAllActionCard():
     queryResult = ActionCardDeck.query.all()
     cards = [
@@ -126,7 +126,7 @@ def getActionCard():
     return {"result": selectedCard.card}
 
 
-@app.route('/getAllCharacterCard')
+@app.route('/getAllCharacterCards')
 def getAllCharacterCard():
     queryResult = CharacterCardDeck.query.all()
     cards = [
