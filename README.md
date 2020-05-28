@@ -3,12 +3,13 @@
 Install yarn package manager at:
 https://classic.yarnpkg.com/en/docs/install/#windows-stable
 
-In the project api directory, install flask in virtual environment then run:
+In the project api directory, install flask packages in virtual environment:
 
 ### `$ python -m venv venv`
 ### `$ venv\Scripts\activate`
 ### `(venv) $ pip install flask python-dotenv`
 
+Then run:
 ### `$ yarn start-api`
 
 Runs the app in the development mode.<br />
