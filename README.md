@@ -9,6 +9,8 @@ In the project api directory, install flask packages in virtual environment:
 ### `$ venv\Scripts\activate`
 ### `(venv) $ pip install flask python-dotenv`
 
+Install all python/flask packages in the virtual environment. Always activate the venv first.
+
 Then run:
 ### `$ yarn start-api`
 
